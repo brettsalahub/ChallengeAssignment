@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+ <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+ <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+ <link rel="stylesheet" href="/resources/demos/style.css">
+  <script>
+  $(function() {
+    $( "#from" ).datepicker({
+      defaultDate: "-1w",
+      changeMonth: true,
+      numberOfMonths: 2,
+      onClose: function( selectedDate ) {
+        $( "#to" ).datepicker( "option", "minDate", selectedDate );
+      }
+    });
+    $( "#to" ).datepicker({
+      defaultDate: "-1d",
+      changeMonth: true,
+      numberOfMonths: 2,
+      onClose: function( selectedDate ) {
+        $( "#from" ).datepicker( "option", "maxDate", selectedDate );
+      }
+    });
+  });
+  </script>
+
+
+<h1>Practise with Ruby and Brett's Programming challenge.</h1>
+
+<p>
+[Updated 2016-05-08 Sunday]
+</p>
+
+ 
+<h2>Challenge 1 - Last.fm</h2>
+Status: Unfinished.
+<br>
+<br> Please enter a last fm listener's name and the beginning and end date for the listening history you wish to retrieve for that listener, and press Submit: 
+<br> 
+<%= form_tag(listenerstats_path, :method=>'post') do %>
+	Listener's name:
+	<%= text_field_tag "listenerName" %> <br />
+	<label for="from">From</label>
+	<input type="text" id="from" name="from">
+	<label for="to">to</label>
+	<input type="text" id="to" name="to">
+	<%= submit_tag 'Submit' %>
+<% end %>
+<hr>
+<h2>Challenge 2 - Cat Database</h2>
+<%= link_to 'Cats database', controller: 'cats' %>
+<br>
+<hr>
+<h2>Challenge 2b - Cat Database in Scala</h2>
+Status: Not done
+<hr>
+<h2>Challenge 3 - Responsive data visualisation</h2>
+Status: Not done
+<hr>
+
+
